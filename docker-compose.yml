@@ -1,0 +1,12 @@
+services:
+  phaser-game:
+    build: .
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./src:/usr/src/app/src
+      - ./dist:/usr/src/app/dist
+      - /usr/src/app/node_modules
+    environment:
+      - NODE_ENV=development
+    command: npm start
